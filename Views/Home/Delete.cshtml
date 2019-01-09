@@ -1,0 +1,30 @@
+﻿@model CRUD_ASP.Models.User
+<h2>Delete</h2>
+@using (Html.BeginForm("delete", "home", FormMethod.Post, new { id = "#popupForm" }))
+{
+    @Html.HiddenFor(a => a.Id)
+    <div class="form-group">
+        <label>Name</label>
+        <p>@Model.name</p>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <p>@Model.email</p>
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <p>@Model.phone</p>
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        <p>@Model.country</p>
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <p>@Model.city</p>
+    </div>
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+}
+

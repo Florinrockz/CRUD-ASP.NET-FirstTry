@@ -1,0 +1,38 @@
+﻿@model CRUD_ASP.Models.User
+<h2>Save</h2>
+@using (Html.BeginForm("save", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Id > 0)
+    {
+        @Html.HiddenFor(a => a.Id)
+    }
+
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(a => a.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.name)
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(a => a.email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.email)
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        @Html.TextBoxFor(a => a.phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.phone)
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        @Html.TextBoxFor(a => a.country, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.country)
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        @Html.TextBoxFor(a => a.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.city)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
